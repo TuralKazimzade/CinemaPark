@@ -1,0 +1,109 @@
+﻿@using BusinessLogic.Dtos;
+
+@model IEnumerable<MovieListDto>
+
+@section scripts {
+
+
+    <script>
+
+
+        var dropdownToggle = $('.dropdown-toggle');
+        var dropdownItems = $('.dropdown-item');
+
+        function toggleDropdown() {
+            var dropdownMenu = $(this).next('.dropdown-menu');
+            dropdownMenu.toggleClass('show');
+        }
+
+        function handleDropdownItemClick() {
+            console.log("Dropdown item clicked");
+        }
+
+        dropdownToggle.on('click', toggleDropdown);
+        dropdownItems.on('click', handleDropdownItemClick);
+
+
+        $(document).ready(function () {
+            $("#addBtn").click(function () {
+                var movieList = {
+                    Name: $("#MovieName").val(),
+                    Director: $("#Director").val(),
+                    MovieReleaseDate: $("#MovieReleaseDate").val(),
+                    Description: $("#Description").val()
+                };
+
+                $.ajax({
+                    async: true,
+                    url: "/Admin/Admin/AddMovie",
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(movieList),
+                    processData: false,
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                        } else {
+                            alert('Failed to add movie');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                        alert('An error occurred while adding the movie');
+                    }
+                });
+            });
+        });
+
+
+        
+    
+
+    </script>
+
+}
+<link rel="stylesheet" href="~/css/AdminStyle.css" />
+<div class="row justify-content-center " style="height:600px">
+    <div class="card custom-card shadow my-3">
+        <div class="card-header  text-center bg-danger h-600 text-center" style="width:900px">
+            <h1>Movies</h1>
+        </div>
+        <div class="card-body custom-body  ">
+            <form class="">
+                <div class="form-group ">
+                    <label for="MovieName" class="form-label">Movie Name</label>
+                    <input type="text" class="form-control" id="MovieName" name="movieName">
+                </div>
+
+                <div class="form-group ">
+                    <label for="Director" class="form-label">Director</label>
+                    <input type="text" class="form-control" id="Director" name="director">
+                </div>
+
+                <div class="form-group ">
+                    <label for="MovieReleaseDate" class="form-label">Movie Release Date</label>
+                    <input type="text" class="form-control" id="MovieReleaseDate" name="movieReleaseDate">
+                </div>
+
+                <div class="form-group mb-4 ">
+                    <label for="Description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="Description" name="description">
+                </div>
+                <div class="d-flex flex-row " style="height:60px">
+                    <button type="button" id="addBtn" class="btn btn-primary w-50 mx-1"> Create</button>
+                    <button class="btn btn-success w-50 mx-1"> Edit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+</script>

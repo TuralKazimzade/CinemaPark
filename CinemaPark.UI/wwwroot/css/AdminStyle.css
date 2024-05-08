@@ -1,0 +1,77 @@
+﻿
+body {
+    background-color: #fbfbfb;
+}
+
+@media (min-width: 991.98px) {
+    main {
+        padding-left: 240px;
+    }
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0; 
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+
+.nav-item{
+    margin-inline:auto;
+    right:50px;
+
+}
+
+.badge-notification {
+    position:absolute;
+    top: -3px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+  
+    font-size: 10px;
+    z-index: 1;
+}
+*{
+    margin:0;
+    box-sizing:border-box;
+}
+
+.custom-card{
+    width:900px;
+   height:500px;
+    padding:0;
+    
+}
+

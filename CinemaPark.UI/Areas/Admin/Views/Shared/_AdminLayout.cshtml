@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/AdminStyle.css" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="~/lib/flag-icons/css/flag-icons.css" rel="stylesheet" />
+    <link href="~/lib/flag-icons/css/flag-icons.min.css" rel="stylesheet" />
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+<body>
+
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky">
+            <div  class="list-group list-group-flush mx-3 mt-4">
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+                    <i class="bi bi-house"></i>   <span>Home</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-lock-fill"></i>  <span>Password</span>
+                </a>
+                <a href="/Movies/Index" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-film"></i>   <span>Movies</span>
+                </a>
+                <a href="#" id="goToTickets" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-ticket-perforated-fill"></i>   <span>Tickets</span>
+                </a>     
+                <a href="/Calendar" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-calendar-fill"></i>  <span>Calendar</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-person-circle"></i></i>  <span>Users</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="bi bi-person-vcard-fill"></i>  <span>About</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler" type="button" data-mdb-collapse-init data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+           
+            
+            <form  class="d-none d-md-flex input-group w-auto my-auto ">
+                <div class="d-flex align-items-center ms-25">                    
+                    <h4>CinemaPark</h4>
+                </div>                
+                <input autocomplete="off" id="search" name="search" type="search" class="form-control rounded ms-3"
+                       placeholder='Search' style="min-width: 105px;" />
+                <span class=" border-10"><button class="btn btn-primary" type="submit"><i class="bi bi-search"></i> </button></span>
+                
+            </form>
+
+            
+            <ul class="navbar-nav ms-auto d-flex flex-row "  >
+                
+                <li class="nav-item dropdown " style="left:3px" >
+                    <a data-mdb-dropdown-init class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                       role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge rounded-pill badge-notification bg-danger me-1">1</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end bg-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item  " href="#">Some news</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Another news</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </li>
+
+                
+                <li class="nav-item">
+                    <a class="nav-link me-3 me-lg-0"  href="#">
+                        <i class="fas fa-fill-drip"></i>
+                    </a>
+                </li>
+                
+                <li class="nav-item me-3 me-lg-5" ">
+                    <a class="nav-link" href="#">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+
+                
+                <li class="nav-item dropdown" >
+                    <a data-mdb-dropdown-init class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"
+                       role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fi fi-us m-0"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end bg-info  aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" style="color:blue" href="#">
+                                <i class="flag-icons fi-e"></i>English
+                                <i class="fa fa-check text-success ms-2"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider"  />
+                        </li>
+                        <li>
+                            <a class="dropdown-item" style="color:blue" href="#"><i class="fi fi-pl"></i>Poland</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" style="color:blue" href="#"><i class="fi fi-ch"></i>China</a>
+                        </li>
+                       
+                        <li>
+                            <a class="dropdown-item" style="color:blue" href="#"><i class="fi fi-ge"></i>Deutsch</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" style="color:blue" href="#"><i class="fi fi-fr"></i>France</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" style="color:blue" href="#"><i class="fi fi-es"></i>Español</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" style="color:blue" href="#"><i class="fi fi-ru"></i>Русский</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" style="color:blue" href="#"><i class="fi fi-az"></i>Azerbaijan</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Avatar -->
+                <li class="nav-item dropdown me-lg-2" >
+                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                       id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle"
+                             height="22" alt="Avatar" loading="lazy" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end bg-danger" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="#">My profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Settings</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+    </nav>
+    
+    
+    
+    <main style="margin-top: 58px;">
+        <div class="container pt-4"></div>
+    </main>
+    <div>
+        @RenderBody()
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("scripts",false);
+    
+
+</body>
+</html>
