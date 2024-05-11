@@ -10,6 +10,8 @@ namespace BusinessLogic.Abstract
 {
    public interface ITicketService
     {
+        Task AddAsync(TicketListDto ticket);
+        Task<IEnumerable<Ticket>> GetTickets();
         Task<IEnumerable<TicketListDto>> GetTicketListAsync();
     }
 }

@@ -11,7 +11,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 
-  
+
 // Add services to the container.
 builder.Services
     .AddControllersWithViews()
@@ -20,6 +20,8 @@ builder.Services
         options.JsonSerializerOptions.PropertyNamingPolicy = null;
         options.JsonSerializerOptions.WriteIndented = true;
     });
+
+
 
 builder.Services.AddAutoMapper(typeof(ICustomAutoMapper));
 builder.Services.AddScoped<IHall,HallRepository>();

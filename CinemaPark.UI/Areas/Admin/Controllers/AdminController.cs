@@ -10,13 +10,14 @@ namespace CinemaPark.UI.Areas.Admin.Controllers
     public class AdminController : Controller
     {
         private readonly IMovieService _movieService;
-
-        public AdminController(IMovieService movieService)
+        private readonly ITicketService _ticketService;       
+        public AdminController(IMovieService movieService, ITicketService ticketService)
         {
             _movieService = movieService;
+            _ticketService = ticketService;
         }
 
-      
+
 
         [HttpGet]
         public async Task<IActionResult> Index()            
@@ -31,6 +32,19 @@ namespace CinemaPark.UI.Areas.Admin.Controllers
 
             await _movieService.AddMovieAsync(movieList);
             return Json(new { message="Movie added" });
+        }
+
+        public async Task<IActionResult> Ticket()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> GetTickets()
+        {
+            var tickets = await _ticketService.GetTickets();
+            return Json(tickets);
+            
         }
 
         

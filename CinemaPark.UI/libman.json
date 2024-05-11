@@ -10,5 +10,15 @@
       "library": "flag-icons@7.2.1",
       "destination": "wwwroot/lib/flag-icons/"
     }
+  ,
+{
+  "provider": "cdnjs",
+  "library": "datatables.net@2.1.1",
+  "destination": "wwwroot/lib/datatables.net/",
+  "files": [
+    "jquery.dataTables.js",
+    "jquery.dataTables.min.js"
   ]
+}
+]
 }

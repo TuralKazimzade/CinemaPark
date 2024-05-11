@@ -22,7 +22,7 @@
   
 
   <ItemGroup>
-    <PackageReference Include="jquery.datatables" Version="1.10.15" />
+    <PackageReference Include="datatables.net" Version="2.0.7" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
   </ItemGroup>
 
